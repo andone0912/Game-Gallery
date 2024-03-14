@@ -2,11 +2,13 @@
   box-sizing: border-box;
   margin: 0;
   font-family: "Kanit", sans-serif;
+  color: rgb(211, 208, 208);
 }
 
 body{
-  background-color: rgb(57, 80, 133);
+  background-color: rgb(133, 90, 173);
 }
+
 
 h1{
   font-size: 30px;
@@ -16,39 +18,77 @@ h1{
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(75, 123, 236);
+  background-color: rgb(72, 126, 243);
   height: 50px;
   border-radius: 0 0 5px 5px;
   padding: 0 25px;
+  border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 .title-section > span{
   font-size: 20px;
 
 }
+.games-container{
+  display: flex;
+  flex-direction: column;
+}
 
-header{
-  border-bottom: solid 2px black;
+.game-preview{
+  width: 300px;
+  height: 200px;
+  background-color: rgb(142, 173, 214);
 }
 
 nav{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  width: 100%;
   margin: 35px 0 40px 0;
   gap: 25px;
 }
 
-nav > span{
+nav > .games-container > span{
   font-size: 22px;
   font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 300px;
-  background-color: rgb(75, 123, 236);
-  border-radius: 10px;
+  background-color: rgb(72, 126, 243);
+  border-radius: 10px 10px 0 0;
   height: 50px;
-  border-bottom: solid 1px black;
+}
+
+.upgrades-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-top: 30px;
+}
+
+.title{
+  font-size: 26px;
+  font-weight: 600; 
+  margin-bottom: 25px;
+  background-color: rgb(72, 126, 243);
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upgrades-content{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.upgrades-content > section{
+  text-align: center;
+  font-size: 18px;
+  width: 200px;
 }
