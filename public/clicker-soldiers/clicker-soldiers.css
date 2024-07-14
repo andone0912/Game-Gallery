@@ -18,6 +18,9 @@ body{
 
 }
 
+.collor{
+  background: linear-gradient(45deg,rgba(15, 15, 15, 0.8) ,rgba(40, 40 ,40,0.8)); 
+}
 
 .fade-bg{
   background: linear-gradient(45deg,rgba(40, 40 ,40,0.8), rgba(15, 15, 15, 0.8));
@@ -35,4 +38,16 @@ body{
   transform: translate(-50%, -50%);
   align-items: center;
   background: linear-gradient(45deg,rgba(10, 10 ,10,0.9), rgba(50, 50, 50, 0.9));
+}
+
+.click-button:active{
+  scale: 0.97;
+  transition: 0.1s;
+  background:linear-gradient(45deg,rgba(121, 121, 121, 0.9), rgba(66, 66, 66, 0.9));
+  box-shadow: 0px 0px 20px;
+}
+
+.fade-bg:hover{
+  border: 1px solid white;
+  transition: 0.4s;
 }
