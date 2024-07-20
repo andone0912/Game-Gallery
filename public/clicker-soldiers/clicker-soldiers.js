@@ -1,14 +1,61 @@
 
 const passive11 = document.querySelector('#passive-1')
 const counterMoney = document.querySelector('.money')
+const counterMoneySec = document.querySelector('.money-sec')
+const levelClick = document.getElementById('level-click')
+const costClick = document.getElementById('cost')
+let money = 0
+let increment = 1
+
+document.getElementById('upgrade-button').onclick = function () {
+    upgradeClick()
+}
+
 document.getElementById('click').onclick = function () {
     addNumber()
 }
 
-const counterMoneySec = document.querySelector('.money-sec')
-let money = 0
+
+
+function upgradeClick() {
+    if(money > 100 && levelClick.innerText === '0 > 1'){
+        increment = 2
+        money = money - 100
+        counterMoney.innerHTML = money
+        levelClick.innerText = '1 > 2'
+        costClick.innerHTML = '500$'
+    } else if (money > 500 && levelClick.innerText === '1 > 2'){
+        increment = 6
+        money = money - 500
+        counterMoney.innerHTML = money
+        levelClick.innerText = '2 > 3'
+        costClick.innerHTML = '3000$'
+    } else if (money > 3000 && levelClick.innerText === '2 > 3'){
+        increment = 15
+        money = money - 3000
+        counterMoney.innerHTML = money
+        levelClick.innerText = '3 > 4'
+        costClick.innerHTML = '20k'
+    } else if (money > 20000 && levelClick.innerText === '3 > 4') {
+        increment = 50
+        money = money - 20000
+        counterMoney.innerHTML = money
+        levelClick.innerText = '4 > 5'
+        costClick.innerHTML = '100k'
+    } else if (money > 20000 && levelClick.innerText === '4 > 5') {
+        increment = 200
+        money = money - 100000
+        counterMoney.innerHTML = money
+        levelClick.innerText = '5'
+        costClick.innerHTML = '-'
+    }
+
+
+
+}
+
 function addNumber() {
-    money += 1
+    money += increment
     counterMoney.innerHTML = money
 }
 
@@ -90,7 +137,7 @@ function clicksPerSecond(started, clicks) {
 function count() {
     clearTimeout(resetTimeoutHandle);
     clicks++;
-    counterClicksSec.innerText = clicksPerSecond(started, clicks).toFixed(1);
+    counterClicksSec.innerText = clicksPerSecond(started, clicks).toFixed(0) * increment;
     resetTimeoutHandle = setTimeout(reset, resetTimeout);
     return false;
 }
