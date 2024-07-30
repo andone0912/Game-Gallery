@@ -2,7 +2,8 @@
 module.exports = {
   content: [
     "./public/clicker-soldiers/*.{html,js}",
-    "./public/game-lobby/*.{html,js}"
+    "./public/game-lobby/*.{html,js}",
+    "./public/slot-machine/*.{html,js}"
 
   ],
   theme: {
